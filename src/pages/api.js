@@ -11,5 +11,9 @@ const instance = axios.create({
 });
 
 export const getWeather = () => {
-  return instance.get(`weather?lat=${lat}&lon=${lon}`);
+  const lat = 35.158043711149562; // => 위도 적어주면 됨
+  const lon = 129.05986219337697; // => 경도
+  return instance
+    .get(`weather?lat=${lat}&lon=${lon}`)
+    .then((reposon) => reposon.data);
 };
